@@ -15,7 +15,7 @@
     <% @beacons.each do |beacon| %>
       <tr>
         <td><%= beacon.distance %></td>
-        <td><%= beacon.hex_id %></td>
+        <td><%= beacon.uuid %></td>
         <td><%= link_to 'Show', beacon %></td>
         <td><%= link_to 'Edit', edit_beacon_path(beacon) %></td>
         <td><%= link_to 'Destroy', beacon, method: :delete, data: { confirm: 'Are you sure?' } %></td>

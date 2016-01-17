@@ -18,7 +18,7 @@ class BeaconsControllerTest < ActionController::TestCase
 
   test "should create beacon" do
     assert_difference('Beacon.count') do
-      post :create, beacon: { distance: @beacon.distance, hex_id: @beacon.hex_id }
+      post :create, beacon: { distance: @beacon.distance, uuid: @beacon.uuid }
     end
 
     assert_redirected_to beacon_path(assigns(:beacon))
@@ -35,7 +35,7 @@ class BeaconsControllerTest < ActionController::TestCase
   end
 
   test "should update beacon" do
-    patch :update, id: @beacon, beacon: { distance: @beacon.distance, hex_id: @beacon.hex_id }
+    patch :update, id: @beacon, beacon: { distance: @beacon.distance, uuid: @beacon.uuid }
     assert_redirected_to beacon_path(assigns(:beacon))
   end
 

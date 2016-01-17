@@ -2,8 +2,8 @@
 
 one:
   distance: MyString
-  hex_id: MyString
+  uuid: MyString
 
 two:
   distance: MyString
-  hex_id: MyString
+  uuid: MyString
