@@ -27,6 +27,7 @@
                   <th>Días de retraso</th>
                   <th>Localización</th>
                   <th>Tipo</th>
+                  <th>Luz</th>
                 </tr>
               </thead>
               <tbody>
@@ -60,6 +61,7 @@
                   <th>Días de retraso</th>
                   <th>Localización</th>
                   <th>Tipo</th>
+                  <th>Luz</th>
                 </tr>
               </thead>
               <tbody>
@@ -72,6 +74,13 @@
                   <td><%= g.days_late %></td>
                   <td><%= g.last_location %></td>
                   <td><%= g.sort %></td>
+                  <td><%= check_box_tag 'on', g.id, !g.light.zero?,
+                          data: {
+                            remote: true,
+                            url: toggle_light_path(id: g.id),
+                            method: "POST"
+                          } %>
+                  </td>
                 </tr>
                 <% end %>
                 <% end %>
@@ -88,6 +97,7 @@
                   <th>Días de retraso</th>
                   <th>Localización</th>
                   <th>Tipo</th>
+                  <th>Luz</th>
                 </tr>
               </thead>
               <tbody>
@@ -100,6 +110,13 @@
                   <td><%= g.days_late %></td>
                   <td><%= g.last_location %></td>
                   <td><%= g.sort %></td>
+                  <td><%= check_box_tag 'on', g.id, !g.light.zero?,
+                          data: {
+                            remote: true,
+                            url: toggle_light_path(id: g.id),
+                            method: "POST"
+                          } %>
+                  </td>
                 </tr>
                 <% end %>
                 <% end %>
