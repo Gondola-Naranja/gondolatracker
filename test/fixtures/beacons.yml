@@ -1,9 +1,9 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
-  disance: MyString
+  distance: MyString
   hex_id: MyString
 
 two:
-  disance: MyString
+  distance: MyString
   hex_id: MyString

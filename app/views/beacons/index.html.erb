@@ -5,7 +5,7 @@
 <table>
   <thead>
     <tr>
-      <th>Disance</th>
+      <th>distance</th>
       <th>Hex</th>
       <th colspan="3"></th>
     </tr>
@@ -14,7 +14,7 @@
   <tbody>
     <% @beacons.each do |beacon| %>
       <tr>
-        <td><%= beacon.disance %></td>
+        <td><%= beacon.distance %></td>
         <td><%= beacon.hex_id %></td>
         <td><%= link_to 'Show', beacon %></td>
         <td><%= link_to 'Edit', edit_beacon_path(beacon) %></td>
