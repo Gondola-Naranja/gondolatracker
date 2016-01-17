@@ -1,9 +1,10 @@
 <p id="notice"><%= notice %></p>
 
 <div class="container-fluid">
+  <h1 style="text-align:center">PLANTA CELAYA</h1>
   <div class="row">
     <div class="col-md-12">
-      <%= image_tag "mapa.png" %>
+      <div style="text-align:center"><%= image_tag "mapa.png" %></div>
       <div class="tabbable" id="tabs-425382">
         <ul class="nav nav-tabs">
           <li class="active">
@@ -21,19 +22,23 @@
                   <th>ID</th>
                   <th>Matricula</th>
                   <th>Fecha de entrada</th>
+                  <th>Días de retraso</th>
                   <th>Localización</th>
                   <th>Tipo</th>
                 </tr>
               </thead>
               <tbody>
                 <% @gondolla.each do |g| %>
+                  <% if g.last_location == "Patio Chatarra 1" %>
                 <tr>
                   <td><%= g.id %></td>
                   <td><%= g.plate %></td>
                   <td><%= g.updated_at %></td>
+                  <td><%= g.days_late %></td>
                   <td><%= g.last_location %></td>
                   <td><%= g.sort %></td>
                 </tr>
+                <% end %>
                 <% end %>
               </tbody>
             </table>
@@ -45,6 +50,7 @@
                   <th>ID</th>
                   <th>Matricula</th>
                   <th>Fecha de entrada</th>
+                  <th>Días de retraso</th>
                   <th>Localización</th>
                   <th>Tipo</th>
                 </tr>
@@ -56,6 +62,7 @@
                   <td><%= g.id %></td>
                   <td><%= g.plate %></td>
                   <td><%= g.updated_at %></td>
+                  <td><%= g.days_late %></td>
                   <td><%= g.last_location %></td>
                   <td><%= g.sort %></td>
                 </tr>
