@@ -1,4 +1,5 @@
 class GondolaController < ApplicationController
+  protect_from_forgery with: :null_session
   def insert
     gondola = Gondola.find_or_create_by(plate: params[:gondola])
     gondola.beacons.create(beacon_params)
