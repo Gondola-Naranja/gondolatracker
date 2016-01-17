@@ -5,6 +5,7 @@ class WerksController < ApplicationController
   # GET /werks.json
   def index
     @werks = Werk.all
+    @gondolla = Gondolla.all
   end
 
   # GET /werks/1

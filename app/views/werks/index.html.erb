@@ -1,27 +1,71 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Listing Werks</h1>
-
-<table>
-  <thead>
-    <tr>
-      <th>Name</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @werks.each do |werk| %>
-      <tr>
-        <td><%= werk.name %></td>
-        <td><%= link_to 'Show', werk %></td>
-        <td><%= link_to 'Edit', edit_werk_path(werk) %></td>
-        <td><%= link_to 'Destroy', werk, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
-
-<br>
-
-<%= link_to 'New Werk', new_werk_path %>
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-md-12">
+      <%= image_tag "mapa.png" %>
+      <div class="tabbable" id="tabs-425382">
+        <ul class="nav nav-tabs">
+          <li class="active">
+            <a href="#tab1" data-toggle="tab">Patio chatarra 1</a>
+          </li>
+          <li>
+            <a href="#tab2" data-toggle="tab">Patio chatarra 2</a>
+          </li>
+        </ul>
+        <div class="tab-content">
+          <div class="tab-pane active" id="tab1">
+            <table class="table table-condensed table-hover">
+              <thead>
+                <tr>
+                  <th>ID</th>
+                  <th>Matricula</th>
+                  <th>Fecha de entrada</th>
+                  <th>Localización</th>
+                  <th>Tipo</th>
+                </tr>
+              </thead>
+              <tbody>
+                <% @gondolla.each do |g| %>
+                <tr>
+                  <td><%= g.id %></td>
+                  <td><%= g.plate %></td>
+                  <td><%= g.updated_at %></td>
+                  <td><%= g.last_location %></td>
+                  <td><%= g.sort %></td>
+                </tr>
+                <% end %>
+              </tbody>
+            </table>
+          </div>
+          <div class="tab-pane" id="tab2">
+            <table class="table table-condensed table-hover">
+              <thead>
+                <tr>
+                  <th>ID</th>
+                  <th>Matricula</th>
+                  <th>Fecha de entrada</th>
+                  <th>Localización</th>
+                  <th>Tipo</th>
+                </tr>
+              </thead>
+              <tbody>
+                  <% @gondolla.each do |g| %>
+                  <% if g.last_location == "Patio Chatarra 2" %>
+                <tr>
+                  <td><%= g.id %></td>
+                  <td><%= g.plate %></td>
+                  <td><%= g.updated_at %></td>
+                  <td><%= g.last_location %></td>
+                  <td><%= g.sort %></td>
+                </tr>
+                <% end %>
+                <% end %>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
