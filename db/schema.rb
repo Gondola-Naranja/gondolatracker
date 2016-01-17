@@ -11,16 +11,30 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160116170819) do
+ActiveRecord::Schema.define(version: 20160117003649) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
   create_table "beacons", force: :cascade do |t|
-    t.string   "disance"
-    t.string   "hex_id"
+    t.string   "distance"
+    t.string   "uuid"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string   "rssi"
+    t.string   "power"
+    t.integer  "gondola_id"
   end
 
+  add_index "beacons", ["gondola_id"], name: "index_beacons_on_gondola_id", using: :btree
+
+  create_table "gondolas", force: :cascade do |t|
+    t.string   "plate"
+    t.datetime "arrived_at"
+    t.string   "last_location"
+    t.datetime "created_at",    null: false
+    t.datetime "updated_at",    null: false
+  end
+
+  add_foreign_key "beacons", "gondolas"
 end
