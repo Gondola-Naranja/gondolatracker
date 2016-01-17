@@ -1,6 +1,6 @@
 require 'test_helper'
 
-class GondollaTest < ActiveSupport::TestCase
+class GondolaTest < ActiveSupport::TestCase
   # test "the truth" do
   #   assert true
   # end

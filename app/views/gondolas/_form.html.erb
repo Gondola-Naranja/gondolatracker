@@ -1,10 +1,10 @@
-<%= form_for(@gondolla) do |f| %>
-  <% if @gondolla.errors.any? %>
+<%= form_for(@gondola) do |f| %>
+  <% if @gondola.errors.any? %>
     <div id="error_explanation">
-      <h2><%= pluralize(@gondolla.errors.count, "error") %> prohibited this gondolla from being saved:</h2>
+      <h2><%= pluralize(@gondola.errors.count, "error") %> prohibited this gondola from being saved:</h2>
 
       <ul>
-      <% @gondolla.errors.full_messages.each do |message| %>
+      <% @gondola.errors.full_messages.each do |message| %>
         <li><%= message %></li>
       <% end %>
       </ul>

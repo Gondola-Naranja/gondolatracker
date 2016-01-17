@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Plate:</strong>
+  <%= @gondola.plate %>
+</p>
+
+<p>
+  <strong>Last location:</strong>
+  <%= @gondola.last_location %>
+</p>
+
+<p>
+  <strong>Type:</strong>
+  <%= @gondola.sort %>
+</p>
+
+<%= link_to 'Edit', edit_gondola_path(@gondola) %> |
+<%= link_to 'Back', gondolas_path %>

@@ -1,4 +1,4 @@
 class Werk < ActiveRecord::Base
-  has_many :gondollas
+  has_many :gondolas
   has_many :beacons
 end

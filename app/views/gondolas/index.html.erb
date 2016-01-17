@@ -1,0 +1,31 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Gondolas</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Plate</th>
+      <th>Last location</th>
+      <th>Type</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @gondolas.each do |gondola| %>
+      <tr>
+        <td><%= gondola.plate %></td>
+        <td><%= gondola.last_location %></td>
+        <td><%= gondola.sort %></td>
+        <td><%= link_to 'Show', gondola %></td>
+        <td><%= link_to 'Edit', edit_gondola_path(gondola) %></td>
+        <td><%= link_to 'Destroy', gondola, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Gondola', new_gondola_path %>
