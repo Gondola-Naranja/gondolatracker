@@ -1,6 +1,10 @@
 class Gondola < ActiveRecord::Base
   has_many :beacons
 
+  def toggle_light
+    update_column(:light, (light + 1) % 2)
+  end
+
   def time_diff
     seconds_diff = (created_at - Time.now).to_i.abs
 

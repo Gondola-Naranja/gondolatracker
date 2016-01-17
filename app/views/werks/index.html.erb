@@ -38,6 +38,13 @@
                   <td><%= g.days_late %></td>
                   <td><%= g.last_location %></td>
                   <td><%= g.sort %></td>
+                  <td><%= check_box_tag 'on', g.id, !g.light.zero?,
+                          data: {
+                            remote: true,
+                            url: toggle_light_path(id: g.id),
+                            method: "POST"
+                          } %>
+                  </td>
                 </tr>
                 <% end %>
               </tbody>

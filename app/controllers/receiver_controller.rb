@@ -12,6 +12,11 @@ class ReceiverController < ApplicationController
     render json: { time: gondola.time_diff }
   end
 
+  def light
+    gondola = Gondola.find_by(plate: params[:plate])
+    render json: { light: gondola.light }
+  end
+
   private
 
   def beacon_params

@@ -4,8 +4,10 @@ Rails.application.routes.draw do
   resources :werks
   resources :beacons
 
+  post 'toggle_light' => 'gondolas#toggle_light', as: :toggle_light
   post 'beacon_insert' => 'receiver#insert'
   get 'time/:plate' => 'receiver#time'
+  get 'light_status/:plate' => 'receiver#light'
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

@@ -1,5 +1,5 @@
 class GondolasController < ApplicationController
-  before_action :set_gondola, only: [:show, :edit, :update, :destroy]
+  before_action :set_gondola, only: [:show, :edit, :toggle_light, :update, :destroy]
 
   # GET /gondolas
   # GET /gondolas.json
@@ -19,6 +19,11 @@ class GondolasController < ApplicationController
 
   # GET /gondolas/1/edit
   def edit
+  end
+
+  def toggle_light
+    @gondola.toggle_light
+    head :no_content
   end
 
   # POST /gondolas
