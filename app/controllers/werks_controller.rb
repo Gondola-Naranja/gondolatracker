@@ -5,7 +5,7 @@ class WerksController < ApplicationController
   # GET /werks.json
   def index
     @werks = Werk.all
-    @gondola = Gondola.all
+    @gondola = Gondola.order(created_at: :asc)
   end
 
   # GET /werks/1
