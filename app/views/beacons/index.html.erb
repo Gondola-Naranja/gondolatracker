@@ -9,7 +9,6 @@
       <th>Distancia</th>
       <th>RSSI</th>
       <th>Power</th>
-      <th>Gondola</th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -21,7 +20,6 @@
         <td><%= beacon.distance %></td>
         <td><%= beacon.rssi %></td>
         <td><%= beacon.power %></td>
-        <td><%= beacon.gondola_id %></td>
         <td><%= link_to 'Show', beacon %></td>
         <td><%= link_to 'Edit', edit_beacon_path(beacon) %></td>
         <td><%= link_to 'Destroy', beacon, method: :delete, data: { confirm: 'Are you sure?' } %></td>

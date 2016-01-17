@@ -8,4 +8,16 @@ class Gondolla < ActiveRecord::Base
     end
   end
 
+  def sort
+    if plate.start_with?("GNOX", "CITX")
+      "USA"
+    elsif plate.start_with?("FXE")
+      "Nacional"
+    elsif plate.start_with?("DEAX", "SP", "MP")
+      "Privada"
+    elsif plate.start_with?("KCSM", "TCM")
+      "Nacional Norte"
+    end
+  end
+
 end
