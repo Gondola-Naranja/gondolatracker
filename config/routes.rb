@@ -3,7 +3,9 @@ Rails.application.routes.draw do
   resources :gondolas
   resources :werks
   resources :beacons
-  post 'gondola' => 'gondolas#insert'
+
+  post 'beacon_insert' => 'receiver#insert'
+  get 'time/:plate' => 'receiver#time'
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

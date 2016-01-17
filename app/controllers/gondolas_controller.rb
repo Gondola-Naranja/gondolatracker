@@ -1,12 +1,5 @@
 class GondolasController < ApplicationController
-  protect_from_forgery with: :null_session, only: :insert
   before_action :set_gondola, only: [:show, :edit, :update, :destroy]
-
-  def insert
-    gondola = Gondola.find_or_create_by(plate: params[:gondola])
-    gondola.beacons.create(beacon_params)
-    head status: :created
-  end
 
   # GET /gondolas
   # GET /gondolas.json
