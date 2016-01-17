@@ -6,6 +6,7 @@ Rails.application.routes.draw do
 
   post 'toggle_light' => 'gondolas#toggle_light', as: :toggle_light
   post 'beacon_insert' => 'receiver#insert'
+  get 'beacon_insert' => 'receiver#insert'
   get 'time/:plate' => 'receiver#time'
   get 'light_status/:plate' => 'receiver#light'
 
