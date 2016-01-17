@@ -1,4 +1,5 @@
 class GondolasController < ApplicationController
+  protect_from_forgery with: :null_session, only: :insert
   before_action :set_gondola, only: [:show, :edit, :update, :destroy]
 
   def insert
