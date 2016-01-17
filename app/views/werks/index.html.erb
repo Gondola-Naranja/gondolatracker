@@ -8,10 +8,13 @@
       <div class="tabbable" id="tabs-425382">
         <ul class="nav nav-tabs">
           <li class="active">
-            <a href="#tab1" data-toggle="tab">Patio chatarra 1</a>
+            <a href="#tab1" data-toggle="tab">Todos</a>
           </li>
           <li>
             <a href="#tab2" data-toggle="tab">Patio chatarra 2</a>
+          </li>
+          <li>
+            <a href="#tab3" data-toggle="tab">Patio chatarra 2</a>
           </li>
         </ul>
         <div class="tab-content">
@@ -29,16 +32,14 @@
               </thead>
               <tbody>
                 <% @gondolla.each do |g| %>
-                  <% if g.last_location == "Patio Chatarra 1" %>
                 <tr>
                   <td><%= g.id %></td>
                   <td><%= g.plate %></td>
-                  <td><%= g.updated_at %></td>
+                  <td><%= g.created_at %></td>
                   <td><%= g.days_late %></td>
                   <td><%= g.last_location %></td>
                   <td><%= g.sort %></td>
                 </tr>
-                <% end %>
                 <% end %>
               </tbody>
             </table>
@@ -56,12 +57,12 @@
                 </tr>
               </thead>
               <tbody>
-                  <% @gondolla.each do |g| %>
-                  <% if g.last_location == "Patio Chatarra 2" %>
+                <% @gondolla.each do |g| %>
+                  <% if g.last_location == "Patio Chatarra 1" %>
                 <tr>
                   <td><%= g.id %></td>
                   <td><%= g.plate %></td>
-                  <td><%= g.updated_at %></td>
+                  <td><%= g.created_at %></td>
                   <td><%= g.days_late %></td>
                   <td><%= g.last_location %></td>
                   <td><%= g.sort %></td>
@@ -71,6 +72,35 @@
               </tbody>
             </table>
           </div>
+          <div class="tab-pane" id="tab3">
+            <table class="table table-condensed table-hover">
+              <thead>
+                <tr>
+                  <th>ID</th>
+                  <th>Matricula</th>
+                  <th>Fecha de entrada</th>
+                  <th>Días de retraso</th>
+                  <th>Localización</th>
+                  <th>Tipo</th>
+                </tr>
+              </thead>
+              <tbody>
+                  <% @gondolla.each do |g| %>
+                  <% if g.last_location == "Patio Chatarra 2" %>
+                <tr>
+                  <td><%= g.id %></td>
+                  <td><%= g.plate %></td>
+                  <td><%= g.created_at %></td>
+                  <td><%= g.days_late %></td>
+                  <td><%= g.last_location %></td>
+                  <td><%= g.sort %></td>
+                </tr>
+                <% end %>
+                <% end %>
+              </tbody>
+            </table>
+          </div>
+
         </div>
       </div>
     </div>
