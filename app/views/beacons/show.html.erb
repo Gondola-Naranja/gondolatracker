@@ -6,8 +6,23 @@
 </p>
 
 <p>
-  <strong>Hex:</strong>
+  <strong>UUID:</strong>
   <%= @beacon.uuid %>
+</p>
+
+<p>
+  <strong>RSSI:</strong>
+  <%= @beacon.rssi %>
+</p>
+
+<p>
+  <strong>Power:</strong>
+  <%= @beacon.power %>
+</p>
+
+<p>
+  <strong>Gondola_id:</strong>
+  <%= @beacon.gondola_id %>
 </p>
 
 <%= link_to 'Edit', edit_beacon_path(@beacon) %> |

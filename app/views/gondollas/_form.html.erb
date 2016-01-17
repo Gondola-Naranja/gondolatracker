@@ -1,0 +1,29 @@
+<%= form_for(@gondolla) do |f| %>
+  <% if @gondolla.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@gondolla.errors.count, "error") %> prohibited this gondolla from being saved:</h2>
+
+      <ul>
+      <% @gondolla.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :plate %><br>
+    <%= f.text_field :plate %>
+  </div>
+  <div class="field">
+    <%= f.label :last_location %><br>
+    <%= f.text_field :last_location %>
+  </div>
+  <div class="field">
+    <%= f.label :type %><br>
+    <%= f.text_field :type %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

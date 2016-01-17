@@ -1,6 +1,12 @@
 Rails.application.routes.draw do
+  resources :types
+  resources :gondollas
+  resources :werks
   resources :beacons
   post 'gondola' => 'gondola#insert'
+
+  resources :gondolas
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

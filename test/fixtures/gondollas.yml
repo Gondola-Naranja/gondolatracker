@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  plate: MyString
+  last_location: MyString
+  type: 
+
+two:
+  plate: MyString
+  last_location: MyString
+  type: 
